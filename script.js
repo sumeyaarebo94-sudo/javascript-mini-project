@@ -4,6 +4,7 @@ const taskList = document.getElementById("taskList");
 const errorMsg = document.getElementById("errorMsg");
 const remainingCount = document.getElementById("remainingCount");
 const clearBtn = document.getElementById("clearBtn");
+const allDoneMsg = document.getElementById("allDoneMsg");
 
 let tasks = [];
 
@@ -76,7 +77,14 @@ function updateRemainingCount() {
     });
 
     remainingCount.textContent = remaining;
+   
+     if (tasks.length > 0 && remaining === 0) {
+        allDoneMsg.classList.add("visible");
+    }  else {
+        allDoneMsg.classList.remove("visible");
+    }
 }
+
 function clearAllTasks() {
     tasks = [];
     renderTasks();
