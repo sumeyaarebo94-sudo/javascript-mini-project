@@ -41,14 +41,21 @@ function renderTasks() {
         li.innerHTML = `
             <span class="task-text">${task.text}</span>
             <button class="done-btn">Done</button>
+            <button class="delete-btn">Delete</button>
         `;
 
         const doneBtn = li.querySelector(".done-btn");
+        const deleteBtn = li.querySelector(".delete-btn");
 
         doneBtn.addEventListener("click", function() {
             task.done = !task.done;
             renderTasks();
         });
+        deleteBtn.addEventListener("click", function() {
+        const index = tasks.indexOf(task);
+        tasks.splice(index, 1);
+        renderTasks();
+    });
 
         taskList.appendChild(li);
     });
