@@ -81,3 +81,17 @@ function clearAllTasks() {
     tasks = [];
     renderTasks();
 }
+const colorCircles = document.querySelectorAll(".color-circle");
+
+colorCircles.forEach(function(circle) {
+    circle.addEventListener("click", function() {
+
+        document.body.style.backgroundColor = circle.dataset.color;
+
+        colorCircles.forEach(function(circle) {
+            circle.classList.remove("active");
+        });
+
+        this.classList.add("active");
+    });
+});

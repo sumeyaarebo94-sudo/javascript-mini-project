@@ -15,8 +15,6 @@ body {
   padding: 40px 16px;
   transition: background-color 0.4s ease;
 }
-
-/* ── Card ── */
 .card {
   background: #ffffff;
   border-radius: 16px;
@@ -25,8 +23,6 @@ body {
   max-width: 520px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
-
-/* ── Header ── */
 h1 {
   font-size: 24px;
   font-weight: 700;
@@ -81,16 +77,12 @@ h1 {
 #addBtn:hover {
   background: #3f51b5;
 }
-
-/* ── Error message ── */
 #errorMsg {
   font-size: 12px;
   color: #e53935;
   margin-bottom: 12px;
   min-height: 16px;
 }
-
-/* ── Task list ── */
 #taskList {
   list-style: none;
   display: flex;
@@ -115,8 +107,6 @@ h1 {
   color: #2d2d2d;
   transition: color 0.2s;
 }
-
-/* ── CSS classes students will apply with classList ── */
 .done .task-text {
   text-decoration: line-through;
   color: #aaa;
@@ -125,8 +115,6 @@ h1 {
 .done {
   background: #f0f0f0;
 }
-
-/* ── Task buttons ── */
 .done-btn {
   padding: 5px 12px;
   font-size: 12px;
@@ -158,8 +146,6 @@ h1 {
 .delete-btn:hover {
   background: #ffcdd2;
 }
-
-/* ── Clear All button ── */
 #clearBtn {
   display: block;
   width: 100%;
@@ -178,15 +164,12 @@ h1 {
   border-color: #e53935;
   color: #e53935;
 }
-
-/* ── Divider ── */
 .divider {
   border: none;
   border-top: 1px solid #ebebeb;
   margin-bottom: 20px;
 }
 
-/* ── BONUS: Color picker section ── */
 .color-section p {
   font-size: 12px;
   font-weight: 600;
@@ -215,7 +198,6 @@ h1 {
   transform: scale(1.15);
 }
 
-/* JS adds this class when a color is selected */
 .color-circle.active {
   border-color: #fff;
   outline: 2px solid #5c6bc0;
@@ -249,8 +231,6 @@ h1 {
 .color-circle[data-color="#1b5e20"] {
   background-color: #1b5e20;
 }
-
-/* ── All done celebration message ── */
 .all-done-msg {
   text-align: center;
   font-size: 13px;
@@ -259,8 +239,6 @@ h1 {
   margin-top: 8px;
   display: none;
 }
-
-/* JS adds this class to show the message */
 .all-done-msg.visible {
   display: block;
 }
