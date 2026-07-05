@@ -3,10 +3,12 @@ const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 const errorMsg = document.getElementById("errorMsg");
 const remainingCount = document.getElementById("remainingCount");
+const clearBtn = document.getElementById("clearBtn");
 
 let tasks = [];
 
 addBtn.addEventListener("click", addTask);
+clearBtn.addEventListener("click", clearAllTasks);
 
 function addTask() {
     const taskText = taskInput.value.trim();
@@ -51,12 +53,31 @@ function renderTasks() {
             task.done = !task.done;
             renderTasks();
         });
+
         deleteBtn.addEventListener("click", function() {
-        const index = tasks.indexOf(task);
-        tasks.splice(index, 1);
-        renderTasks();
-    });
+            const index = tasks.indexOf(task);
+            tasks.splice(index, 1);
+            renderTasks();
+        });
 
         taskList.appendChild(li);
     });
+
+    updateRemainingCount();
+}
+
+function updateRemainingCount() {
+    let remaining = 0;
+
+    tasks.forEach(function(task) {
+        if (!task.done) {
+            remaining++;
+        }
+    });
+
+    remainingCount.textContent = remaining;
+}
+function clearAllTasks() {
+    tasks = [];
+    renderTasks();
 }
